@@ -32,7 +32,8 @@
 					'user-library-read',
 					'user-library-modify',
 					'user-follow-read',
-					'user-follow-modify'
+					'user-follow-modify',
+					'user-top-read'
 				]);
 
 				var width = 450,

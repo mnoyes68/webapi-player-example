@@ -31,6 +31,16 @@
       $scope.message = results.message;
     });
 
+    API.getMyTopTracks().then(function(results) {
+      $scope.myTopTracks = results.items;
+    });
+
+    API.getMyTopArtists().then(function(results) {
+      $scope.myTopArtists = results.items;
+    });
+
+    /*
+
     API.getNewReleases(Auth.getUserCountry()).then(function(results) {
       // @todo: description, follower count
       $scope.newReleases = results.albums.items;
@@ -39,6 +49,7 @@
     API.getBrowseCategories().then(function(results) {
       $scope.genresMoods = results.categories.items;
     });
+    */
   });
 
 })();

@@ -505,6 +505,32 @@
 				return ret.promise;
 			},
 
+			getMyTopTracks: function() {
+				var ret = $q.defer();
+				$http.get(baseUrl + '/me/top/tracks', {
+					headers: {
+						'Authorization': 'Bearer ' + Auth.getAccessToken()
+					}
+				}).success(function(r) {
+					console.log('got my top tracks', r);
+					ret.resolve(r);
+				});
+				return ret.promise;
+			},
+
+			getMyTopArtists: function() {
+				var ret = $q.defer();
+				$http.get(baseUrl + '/me/top/artists', {
+					headers: {
+						'Authorization': 'Bearer ' + Auth.getAccessToken()
+					}
+				}).success(function(r) {
+					console.log('got my top artists', r);
+					ret.resolve(r);
+				});
+				return ret.promise;
+			},
+
 		};
 	});
 
