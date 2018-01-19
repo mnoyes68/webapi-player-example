@@ -516,14 +516,14 @@ table tr th {
 	padding: 4px 10px 4px 0;
 }
 
-ul.albums, ul.playlists, ul.genres {
+ul.albums, ul.playlists, ul.genres, ul.artists {
 	margin: 0;
 	padding: 0;
 	border: 0;
 	clear: both;
 }
 
-ul.albums li, ul.playlists li, ul.genres li {
+ul.albums li, ul.playlists li, ul.genres li, ul.artists li {
 	float: left;
 	position: relative;
 	width: 160px;
@@ -532,12 +532,12 @@ ul.albums li, ul.playlists li, ul.genres li {
 	background-color: #393b40;
 }
 
-ul.albums li responsive-cover,  ul.playlists li responsive-cover, ul.genres li img {
+ul.albums li responsive-cover,  ul.playlists li responsive-cover, ul.artists li responsive-cover, ul.genres li img {
 	width: 160px;
 	height: 160px;
 }
 
-ul.albums li p, ul.playlists li p, ul.genres li p {
+ul.albums li p, ul.playlists li p, ul.genres li p, ul.artists li p {
 	padding: 10px;
 }
 

@@ -1,6 +1,6 @@
 <html ng-app="PlayerApp">
 	<head>
-		<title>Thirtify</title>
+		<title>Who's Playing Tonight</title>
 		<link rel="stylesheet" href="style.css" />
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,700' rel='stylesheet' type='text/css'>
 		<script src="bower_components/angular/angular.js"></script>
@@ -8,26 +8,40 @@
 		<script src="app.js"></script>
 		<script src="services/auth.js"></script>
 		<script src="services/api.js"></script>
+	
 		<script src="services/playback.js"></script>
 		<script src="services/playqueue.js"></script>
+	<!--
 		<script src="directives/playlistcover.js"></script>
+	-->
 		<script src="directives/responsivecover.js"></script>
 		<script src="directives/contextmenu.js"></script>
+	<!--
 		<script src="directives/focusme.js"></script>
+	-->
 		<script src="filters/displaytime.js"></script>
+	<!--
 		<script src="filters/timeago.js"></script>
+	-->
 		<script src="controllers/player.js"></script>
 		<script src="controllers/login.js"></script>
+    <!--
 		<script src="controllers/playlist.js"></script>
 		<script src="controllers/home.js"></script>
+	-->
+		
 		<script src="controllers/artist.js"></script>
 		<script src="controllers/album.js"></script>
+	<!--
 		<script src="controllers/user.js"></script>
 		<script src="controllers/usertracks.js"></script>
 		<script src="controllers/playqueue.js"></script>
 		<script src="controllers/searchresults.js"></script>
+		-->
 		<script src="controllers/browse.js"></script>
+	    <!--
 		<script src="controllers/browsecategory.js"></script>
+	    -->
 	</head>
 	<body ng-controller="AppController">
 		<div class="fullview playerview" ng-show="showplayer">
@@ -37,7 +51,7 @@
 						<input type="text" ng-model="query" ng-change="loadsearch()" ng-keyup="loadsearch()" placeholder="Search..." />
 					</div>
 					<div class="titlebox">
-						<a href="#/home">SAMPLE PLAYER APPLICATION</a>
+						<a href="#/home">Whos Playing Tonight</a>
 					</div>
 					<div class="userbox">
 						Signed in as <b><a href="#/users/{{profileUsername}}">{{profileUsername}}</a></b>
@@ -47,24 +61,18 @@
 				<div class="midgroup">
 					<div class="menuview">
 						<div class="list scrollable">
-							<b><a href="#/">MAIN</a></b>
+							
+							<b><a href="#/me">Get Top Artists and Tracks</a></b>
 							<ul class="menuitems">
-								<li><a href="#/" ng-class="getClass('/')">Browse</a></li>
-							</ul>
-							<b><a href="#/me">YOUR MUSIC</a></b>
-							<ul class="menuitems">
-								<li><a href="#/users/{{username}}/tracks" ng-class="getClass('/users/{{username}}/tracks')">Songs</a></li>
-							</ul>
-							<b><a href="#/me">PLAYLISTS</a></b>
-							<ul class="menuitems">
-								<li ng-repeat="pl in playlists track by pl.id" ng-context-menu="menuOptions(pl)" ng-class="getClass('/users/{{pl.username}}/playlists/{{pl.id}}')">
-									<a href="#/users/{{pl.username}}/playlists/{{pl.id}}" ng-if="!pl.editing">
+								<li ng-repeat="pl in topartists" ng-context-menu="menuOptions(pl)" ng-class="getClass('/users/{{pl.username}}/playlists/{{pl.id}}')">
+									<a href="#/users/{{pl.username}}/playlists/{{pl.id}}">
 										{{pl.name}}
 									</a>
-									<input focus-me="focusInput" ng-blur="playlistNameBlur(pl)" ng-if="pl.editing" class="edit" type="text" value="{{pl.name}}" name="title" ng-keyup="playlistNameKeyUp($event, pl)">
 								</li>
 							</ul>
+
 						</div>
+						<!--
 						<div class="preview">
 							<a href="#/albums/{{trackdata.album.id}}">
 								<responsive-cover ng-model="trackdata.album.images"></responsive-cover>
@@ -76,11 +84,14 @@
 								</a>
 							</p>
 						</div>
+					-->
+
 					</div>
 					<div class="mainview">
 						<div ng-view></div>
 					</div>
 				</div>
+				<!--
 				<div class="bottomgroup">
 					<div class="leftcontrols">
 						<div class="prevbutton">
@@ -108,12 +119,13 @@
 						</div>
 					</div>
 					<div class="rightcontrols">
-						<!--
+						
 						a ng-click="shuffle()">SHUF</a>
 						a ng-click="repeat()">REP.</a>
-						-->
+						
 					</div>
 				</div>
+			    -->
 			</div>
 		</div>
 
