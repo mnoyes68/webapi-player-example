@@ -11,37 +11,26 @@
 	
 		<script src="services/playback.js"></script>
 		<script src="services/playqueue.js"></script>
-	<!--
 		<script src="directives/playlistcover.js"></script>
-	-->
 		<script src="directives/responsivecover.js"></script>
 		<script src="directives/contextmenu.js"></script>
-	<!--
 		<script src="directives/focusme.js"></script>
-	-->
 		<script src="filters/displaytime.js"></script>
-	<!--
 		<script src="filters/timeago.js"></script>
-	-->
 		<script src="controllers/player.js"></script>
 		<script src="controllers/login.js"></script>
-    <!--
 		<script src="controllers/playlist.js"></script>
 		<script src="controllers/home.js"></script>
-	-->
 		
 		<script src="controllers/artist.js"></script>
 		<script src="controllers/album.js"></script>
-	<!--
 		<script src="controllers/user.js"></script>
 		<script src="controllers/usertracks.js"></script>
 		<script src="controllers/playqueue.js"></script>
 		<script src="controllers/searchresults.js"></script>
-		-->
-		<script src="controllers/browse.js"></script>
-	    <!--
+		<script src="controllers/browse.js"></script>	    
 		<script src="controllers/browsecategory.js"></script>
-	    -->
+	    
 	</head>
 	<body ng-controller="AppController">
 		<div class="fullview playerview" ng-show="showplayer">
@@ -71,8 +60,10 @@
 								</li>
 							</ul>
 
+							<b><a href="#/analytics">View Charts and Analytics</a></b>
+
 						</div>
-						<!--
+						
 						<div class="preview">
 							<a href="#/albums/{{trackdata.album.id}}">
 								<responsive-cover ng-model="trackdata.album.images"></responsive-cover>
@@ -84,7 +75,7 @@
 								</a>
 							</p>
 						</div>
-					-->
+					
 
 					</div>
 					<div class="mainview">
